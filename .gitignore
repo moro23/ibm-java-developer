@@ -1,0 +1,68 @@
+# ===== Java =====
+# Compiled class files
+*.class
+classes/
+target/
+build/
+out/
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+
+# ===== IDE Files =====
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbproject/
+nbdist/
+nbbuild/
+
+# ===== OS Files =====
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Environment & Secrets =====
+.env
+*.env.local
+application-local.properties
+
+# ===== Node.js (for HTML/CSS/JS course) =====
+node_modules/
+package-lock.json
+
+# ===== Docker =====
+docker-compose.override.yml
+
+# ===== Misc =====
+*.tmp
+*.bak
+*.swp
+*~
