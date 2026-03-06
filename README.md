@@ -12,37 +12,37 @@ This program covers Java programming fundamentals, object-oriented design, web d
 
 ## About the Program
 
-| Detail              | Info                                                    |
-|---------------------|---------------------------------------------------------|
-| **Provider**        | IBM via Coursera                                        |
-| **Level**           | Beginner → Intermediate                                 |
-| **Duration**        | 4–5 months (at ~10 hrs/week)                            |
-| **Courses**         | 14-course series                                        |
-| **Key Skills**      | Java, Spring Boot, REST APIs, SQL, Docker, Git, CI/CD   |
-| **Certificate**     | IBM Professional Certificate (shareable on LinkedIn)    |
+| Detail          | Info                                                  |
+| --------------- | ----------------------------------------------------- |
+| **Provider**    | IBM via Coursera                                      |
+| **Level**       | Beginner → Intermediate                               |
+| **Duration**    | 4–5 months (at ~10 hrs/week)                          |
+| **Courses**     | 14-course series                                      |
+| **Key Skills**  | Java, Spring Boot, REST APIs, SQL, Docker, Git, CI/CD |
+| **Certificate** | IBM Professional Certificate (shareable on LinkedIn)  |
 
 ---
 
 ## Course Series & Progress
 
-| #  | Course | Key Topics | Status |
-|----|--------|------------|--------|
-| 01 | [Introduction to Software Engineering](https://www.coursera.org/learn/introduction-to-software-engineering) | SDLC, Agile, Scrum, IDEs, software architecture | Not Started |
-| 02 | [Java Programming for Beginners](https://www.coursera.org/learn/java-programming-for-beginners-course) | Variables, data types, control flow, methods, arrays | **In Progress** |
-| 03 | [Getting Started with Git and GitHub](https://www.coursera.org/learn/getting-started-with-git-and-github) | Version control, branches, PRs, merge, collaboration | Not Started |
-| 04 | [Object Oriented Programming in Java](https://www.coursera.org/learn/object-oriented-programming-in-java-course) | Classes, inheritance, polymorphism, interfaces, design patterns | Not Started |
-| 05 | [Introduction to HTML, CSS, & JavaScript](https://www.coursera.org/learn/introduction-html-css-javascript) | Web fundamentals, DOM, responsive design, front-end basics | Not Started |
-| 06 | [Cloud Native, Microservices, Containers, DevOps and Agile](https://www.coursera.org/learn/cloud-native-microservices-devops-agile) | Cloud computing, Docker, Kubernetes, CI/CD pipelines | Not Started |
-| 07 | [Spring Framework for Java Development](https://www.coursera.org/learn/spring-framework-for-java-development) | Spring Boot, REST APIs, Spring Security, dependency injection | Not Started |
-| 08 | [Java Development with Databases](https://www.coursera.org/learn/java-development-with-databases) | JDBC, Hibernate ORM, SQL/NoSQL, Spring Data JPA | Not Started |
-| 09 | [Java Development Capstone Project](https://www.coursera.org/learn/java-development-capstone-project) | Smart Clinic Management System (full-stack project) | Not Started |
-| 10 | [Software Developer Career Guide and Interview Preparation](https://www.coursera.org/learn/software-developer-career-guide-and-interview-preparation) | Resume building, portfolios, interview strategies | Not Started |
-| 11 | [Generative AI: Elevate your Software Development Career](https://www.coursera.org/learn/generative-ai-elevate-your-software-development-career) | AI-assisted coding, prompt engineering, LLMs for developers | Not Started |
-| 12 | TBA | — | Not Started |
-| 13 | TBA | — | Not Started |
-| 14 | TBA | — | Not Started |
+| #   | Course                                                                                                                                                | Key Topics                                                      | Status          |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --------------- |
+| 01  | [Introduction to Software Engineering](https://www.coursera.org/learn/introduction-to-software-engineering)                                           | SDLC, Agile, Scrum, IDEs, software architecture                 | Not Started     |
+| 02  | [Java Programming for Beginners](https://www.coursera.org/learn/java-programming-for-beginners-course)                                                | Variables, data types, control flow, methods, arrays            | **In Progress** |
+| 03  | [Object Oriented Programming in Java](https://www.coursera.org/learn/object-oriented-programming-in-java-course)                                      | Classes, inheritance, polymorphism, interfaces, design patterns | Not Started     |
+| 04  | Java App Development Project: Fundamentals, OOP & File I/O                                                                                            | Applied Java fundamentals, OOP, file handling                   | Not Started     |
+| 05  | [Introduction to HTML, CSS, & JavaScript](https://www.coursera.org/learn/introduction-html-css-javascript)                                            | Web fundamentals, DOM, responsive design, front-end basics      | Not Started     |
+| 06  | [Getting Started with Git and GitHub](https://www.coursera.org/learn/getting-started-with-git-and-github)                                             | Version control, branches, PRs, merge, collaboration            | Not Started     |
+| 07  | [Spring Framework for Java Development](https://www.coursera.org/learn/spring-framework-for-java-development)                                         | Spring Boot, REST APIs, Spring Security, dependency injection   | Not Started     |
+| 08  | [Java Development with Databases](https://www.coursera.org/learn/java-development-with-databases)                                                     | JDBC, Hibernate ORM, SQL/NoSQL, Spring Data JPA                 | Not Started     |
+| 09  | [Cloud Native, Microservices, Containers, DevOps and Agile](https://www.coursera.org/learn/cloud-native-microservices-devops-agile)                   | Cloud computing, Docker, Kubernetes, CI/CD pipelines            | Not Started     |
+| 10  | Java, Design Patterns, Testing, and Deployment                                                                                                        | Design patterns, unit testing, deployment strategies            | Not Started     |
+| 11  | [Java Development Capstone Project](https://www.coursera.org/learn/java-development-capstone-project)                                                 | Smart Clinic Management System (full-stack project)             | Not Started     |
+| 12  | [Generative AI: Elevate your Software Development Career](https://www.coursera.org/learn/generative-ai-elevate-your-software-development-career)      | AI-assisted coding, prompt engineering, LLMs for developers     | Not Started     |
+| 13  | Generative AI for Java and Spring Development                                                                                                         | AI tools for Java/Spring workflows                              | Not Started     |
+| 14  | [Software Developer Career Guide and Interview Preparation](https://www.coursera.org/learn/software-developer-career-guide-and-interview-preparation) | Resume building, portfolios, interview strategies               | Not Started     |
 
-> **Note:** Coursera lists this as a 14-course series. Courses 12–14 may be recent additions or yet to be published. This table will be updated as they become available.
+> **Note:** Some courses may be recent additions to the series. Links will be added as they become available on Coursera.
 
 **Progress:** `1 / 14 courses in progress`
 
@@ -74,11 +74,12 @@ ibm-java-developer/
 │   ├── notes.md
 │   └── labs/
 │
-├── 03-getting-started-git-github/
+├── 03-oop-in-java/
+│   ├── src/
 │   ├── notes.md
 │   └── labs/
 │
-├── 04-oop-in-java/
+├── 04-java-app-development-project/
 │   ├── src/
 │   ├── notes.md
 │   └── labs/
@@ -88,7 +89,7 @@ ibm-java-developer/
 │   ├── notes.md
 │   └── labs/
 │
-├── 06-cloud-native-microservices/
+├── 06-getting-started-git-github/
 │   ├── notes.md
 │   └── labs/
 │
@@ -102,15 +103,27 @@ ibm-java-developer/
 │   ├── notes.md
 │   └── labs/
 │
-├── 09-capstone-project/
+├── 09-cloud-native-microservices/
+│   ├── notes.md
+│   └── labs/
+│
+├── 10-design-patterns-testing-deployment/
+│   ├── src/
+│   ├── notes.md
+│   └── labs/
+│
+├── 11-capstone-project/
 │   ├── src/
 │   ├── docs/
 │   └── README.md
 │
-├── 10-career-guide-interview-prep/
+├── 12-generative-ai-for-developers/
 │   └── notes.md
 │
-└── 11-generative-ai-for-developers/
+├── 13-generative-ai-java-spring/
+│   └── notes.md
+│
+└── 14-career-guide-interview-prep/
     └── notes.md
 ```
 
@@ -142,18 +155,22 @@ java -cp classes DataTypes
 ## Skills Being Developed
 
 ### Programming & Development
+
 - Java fundamentals (variables, data types, operators, control flow)
 - Object-Oriented Programming (classes, inheritance, polymorphism, interfaces)
+- Design patterns, testing, and deployment practices
 - Spring Boot & Spring Framework (REST APIs, dependency injection, security)
 - HTML, CSS, JavaScript (front-end integration)
 
 ### Data & Databases
+
 - SQL and relational database design
 - JDBC and Hibernate ORM
 - NoSQL database concepts
 - Spring Data JPA
 
 ### DevOps & Cloud
+
 - Git & GitHub (version control, collaboration)
 - Docker (containerization)
 - Kubernetes (orchestration basics)
@@ -161,6 +178,7 @@ java -cp classes DataTypes
 - Cloud-native application design
 
 ### Professional Skills
+
 - Software development lifecycle (SDLC)
 - Agile & Scrum methodologies
 - Technical interview preparation
@@ -170,18 +188,18 @@ java -cp classes DataTypes
 
 ## Tools & Technologies
 
-| Category | Tools |
-|----------|-------|
-| **Language** | Java 21 |
-| **Framework** | Spring Boot, Spring MVC, Spring Security |
-| **ORM** | Hibernate, Spring Data JPA |
-| **Databases** | PostgreSQL, MySQL, NoSQL |
-| **Version Control** | Git, GitHub |
-| **Containers** | Docker, Kubernetes |
-| **Build Tools** | Maven |
-| **IDE** | IntelliJ IDEA / Eclipse |
-| **CI/CD** | GitHub Actions |
-| **API** | RESTful APIs, Swagger/OpenAPI |
+| Category            | Tools                                    |
+| ------------------- | ---------------------------------------- |
+| **Language**        | Java 21                                  |
+| **Framework**       | Spring Boot, Spring MVC, Spring Security |
+| **ORM**             | Hibernate, Spring Data JPA               |
+| **Databases**       | PostgreSQL, MySQL, NoSQL                 |
+| **Version Control** | Git, GitHub                              |
+| **Containers**      | Docker, Kubernetes                       |
+| **Build Tools**     | Maven                                    |
+| **IDE**             | IntelliJ IDEA / Eclipse                  |
+| **CI/CD**           | GitHub Actions                           |
+| **API**             | RESTful APIs, Swagger/OpenAPI            |
 
 ---
 
@@ -189,10 +207,10 @@ java -cp classes DataTypes
 
 As I progress through this certificate, I'm also building portfolio projects to apply what I learn:
 
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
+| Project                                                               | Description                             | Tech Stack                      |
+| --------------------------------------------------------------------- | --------------------------------------- | ------------------------------- |
 | [Task Manager API](https://github.com/YOUR_USERNAME/task-manager-api) | Production-grade REST API with JWT auth | Spring Boot, PostgreSQL, Docker |
-| *More coming soon...* | | |
+| _More coming soon..._                                                 |                                         |                                 |
 
 ---
 
