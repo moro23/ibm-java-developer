@@ -495,3 +495,479 @@ This eliminates the need to write common functionality from scratch and accelera
 | Standard library      | Pre-built tools for networking, data structures, file I/O              |
 | Security              | Bytecode verification, security manager                                |
 | Versatility           | Web, mobile, enterprise, cloud, AI                                     |
+
+# Using Conditional Statements
+
+## What Are Conditional Statements?
+
+Conditional statements are questions your program asks while running. Based on the answer (`true` or `false`), the program decides what to do next. They direct your program's flow based on specified conditions.
+
+---
+
+## Types of Conditional Statements
+
+### 1. `if` Statement
+
+Runs a block of code **only if** the condition is true. If false, the block is skipped entirely.
+
+```java
+int number = 10;
+
+if (number > 5) {
+    System.out.println("The number is greater than 5");
+}
+// Output: The number is greater than 5
+```
+
+### 2. `if-else` Statement
+
+Provides an **alternative action** when the condition is false.
+
+```java
+int number = 3;
+
+if (number > 5) {
+    System.out.println("The number is greater than 5");
+} else {
+    System.out.println("The number is not greater than 5");
+}
+// Output: The number is not greater than 5
+```
+
+### 3. `else-if` Statement
+
+Checks **multiple conditions** in sequence. The first condition that evaluates to `true` runs, and the rest are skipped.
+
+```java
+int number = 5;
+
+if (number > 5) {
+    System.out.println("The number is greater than 5");
+} else if (number == 5) {
+    System.out.println("The number equals 5");
+} else {
+    System.out.println("The number is less than 5");
+}
+// Output: The number equals 5
+```
+
+**How it flows:**
+
+1. Is `number > 5`? → No → skip
+2. Is `number == 5`? → Yes → print and stop
+3. `else` never reached
+
+### 4. `switch` Statement
+
+Checks a **single variable** against multiple values. Cleaner than writing many `if-else` chains for the same variable.
+
+```java
+int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    case 4:
+        System.out.println("Thursday");
+        break;
+    case 5:
+        System.out.println("Friday");
+        break;
+    default:
+        System.out.println("Weekend");
+}
+// Output: Wednesday
+```
+
+**Important:**
+
+- Each `case` checks for a specific value
+- `break` stops execution from falling through to the next case
+- **`default`** is the fallback — runs if no cases match (always include it as good practice)
+
+---
+
+## Nested Conditional Statements
+
+You can place conditional statements **inside** other conditional statements for complex decision logic.
+
+```java
+int age = 20;
+
+if (age >= 18) {
+    System.out.println("You are an adult");
+
+    if (age >= 65) {
+        System.out.println("You are a senior citizen");
+    }
+} else {
+    System.out.println("You are a minor");
+}
+// Output: You are an adult
+// (second message doesn't print because 20 < 65)
+```
+
+**Flow:**
+
+1. Is `age >= 18`? → Yes (20 >= 18) → print "You are an adult"
+2. Is `age >= 65`? → No (20 < 65) → skip
+3. `else` block never reached
+
+---
+
+## When to Use What
+
+| Scenario                                           | Use                    |
+| -------------------------------------------------- | ---------------------- |
+| Single condition to check                          | `if`                   |
+| Two possible outcomes (true/false)                 | `if-else`              |
+| Multiple conditions to check in sequence           | `else-if` chain        |
+| One variable compared against many specific values | `switch`               |
+| Complex multi-level decisions                      | Nested `if` statements |
+
+---
+
+## Key Takeaways
+
+1. **`if`** — runs code when a condition is true
+2. **`if-else`** — adds an alternative path when the condition is false
+3. **`else-if`** — chains multiple conditions; first true one wins
+4. **`switch`** — cleaner way to compare one variable against many values; always include `default`
+5. **Nesting** — place conditionals inside conditionals for complex logic
+6. Conditions evaluate to **boolean** (`true` or `false`) — that's all Java cares about
+
+# Introduction to Loops in Java
+
+## What Are Loops?
+
+Loops execute a block of code **repeatedly** based on a condition. Instead of writing 10 separate print statements, a loop does it in a few lines. They make code shorter, cleaner, and easier to manage.
+
+Java has three primary loop types: `for`, `while`, and `do-while`.
+
+---
+
+## 1. `for` Loop
+
+Use when the **number of iterations is known** beforehand.
+
+**Structure:** three parts in the parentheses — initialization, condition, increment/decrement.
+
+```java
+for (initialization; condition; increment) {
+    // code to repeat
+}
+```
+
+**Example — print 1 to 5:**
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+// Output: 1 2 3 4 5
+```
+
+**How it flows:**
+
+1. `int i = 1` — set counter (runs once)
+2. `i <= 5` — check condition (before each iteration)
+3. Execute the code block
+4. `i++` — increment counter (after each iteration)
+5. Go back to step 2
+
+---
+
+## 2. `while` Loop
+
+Use when the **number of iterations is NOT known** in advance. Continues as long as the condition is `true`.
+
+```java
+while (condition) {
+    // code to repeat
+}
+```
+
+**Example — print 1 to 5:**
+
+```java
+int i = 1;
+
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+// Output: 1 2 3 4 5
+```
+
+**How it flows:**
+
+1. Check condition first
+2. If true → run code block
+3. Check condition again
+4. Repeat until condition is false
+
+---
+
+## 3. `do-while` Loop
+
+Similar to `while`, but **guarantees at least one execution** — the code block runs first, then the condition is checked.
+
+```java
+do {
+    // code to repeat (runs at least once)
+} while (condition);
+```
+
+**Example — print 1 to 5:**
+
+```java
+int i = 1;
+
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+// Output: 1 2 3 4 5
+```
+
+**Key difference from `while`:** Even if `i` started at 6, the loop body would still execute once before the condition is checked.
+
+---
+
+## Comparison
+
+| Loop       | When to Use                         | Condition Check       | Guaranteed Execution |
+| ---------- | ----------------------------------- | --------------------- | -------------------- |
+| `for`      | Known number of iterations          | Before each iteration | No                   |
+| `while`    | Unknown iterations, condition-based | Before each iteration | No                   |
+| `do-while` | Need at least one execution         | After each iteration  | Yes (at least once)  |
+
+---
+
+## Nested Loops
+
+Loops inside loops — useful for multidimensional data (arrays, matrices, tables).
+
+**Example — multiplication table (1–10):**
+
+```java
+for (int i = 1; i <= 10; i++) {           // outer loop = rows
+    for (int j = 1; j <= 10; j++) {       // inner loop = columns
+        System.out.print(i * j + "\t");
+    }
+    System.out.println();                  // new line after each row
+}
+```
+
+The inner loop completes **all** its iterations for each single iteration of the outer loop.
+
+---
+
+## Loop Control Statements
+
+### `break` — Exit the loop immediately
+
+Terminates the loop regardless of the condition. Useful when you find what you're looking for.
+
+```java
+int[] numbers = {1, 3, 5, 7, 9};
+
+for (int num : numbers) {
+    if (num > 5) {
+        System.out.println("Found: " + num);
+        break;    // exits loop immediately
+    }
+}
+// Output: Found: 7
+```
+
+### `continue` — Skip to the next iteration
+
+Skips the rest of the current iteration and moves to the next one.
+
+```java
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        continue;    // skip printing 5
+    }
+    System.out.println(i);
+}
+// Output: 1 2 3 4 6 7 8 9 10 (5 is skipped)
+```
+
+---
+
+## Key Takeaways
+
+1. **`for`** — use when you know how many times to loop
+2. **`while`** — use when looping depends on a condition you can't predict
+3. **`do-while`** — use when the code must run at least once
+4. **Nested loops** — loops inside loops for multi-dimensional work
+5. **`break`** — exit the loop early
+6. **`continue`** — skip the current iteration, keep looping
+
+# Working with Strings in Java
+
+## What is a String?
+
+A string is a **sequence of characters** — like a line of text. It includes letters, spaces, and punctuation. Think of it like a bead necklace: each bead is a character, the whole necklace is the string.
+
+```java
+"Hello, World!"   // 13 characters (space and punctuation count)
+```
+
+Strings are essential for handling text: names, messages, user input, etc.
+
+---
+
+## Creating Strings
+
+Two ways:
+
+```java
+// 1. String literal (preferred, more efficient)
+String greeting = "Hello, World!";
+
+// 2. Using the new keyword (explicitly creates an object)
+String greeting = new String("Hello, World!");
+```
+
+Both work, but literals are preferred — Java can reuse them from a **string pool** for better memory efficiency.
+
+---
+
+## Common String Operations
+
+### `length()` — Count characters
+
+Returns the total number of characters including spaces.
+
+```java
+String text = "Java Programming";
+System.out.println(text.length());   // 16
+```
+
+### `charAt(index)` — Access a single character
+
+Returns the character at a specific position. **Indexing starts at 0.**
+
+```java
+String text = "Java";
+System.out.println(text.charAt(0));   // J
+System.out.println(text.charAt(3));   // a
+```
+
+### Concatenation — Combining strings
+
+Two ways, both produce the same result:
+
+```java
+// Using + operator
+String result = "Hello" + " " + "World";    // "Hello World"
+
+// Using concat() method
+String result = "Hello ".concat("World");    // "Hello World"
+```
+
+### `equals()` — Compare strings
+
+Checks if two strings have **identical content**. Case-sensitive.
+
+```java
+"Hello".equals("Hello");    // true
+"Hello".equals("World");    // false
+"Hello".equals("hello");    // false (case-sensitive!)
+```
+
+> **Important:** Always use `.equals()` to compare strings in Java, **never** `==`. The `==` operator compares memory references, not content.
+
+### `substring(start, end)` — Extract part of a string
+
+Extracts characters from `start` index up to (but **not including**) `end` index.
+
+```java
+String text = "Java Programming";
+System.out.println(text.substring(5, 16));   // "Programming"
+```
+
+```
+Index:  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+Char:   J a v a   P r o g r a  m  m  i  n  g
+                  ^start               ^end (not included)
+```
+
+### `split(delimiter)` — Break a string into pieces
+
+Splits a string into an array based on a delimiter.
+
+```java
+String data = "apple,banana,cherry";
+String[] fruits = data.split(",");
+
+// fruits[0] = "apple"
+// fruits[1] = "banana"
+// fruits[2] = "cherry"
+```
+
+### `String.join(separator, elements)` — Combine strings with a separator
+
+```java
+String result = String.join(", ", "Red", "Green", "Blue");
+// "Red, Green, Blue"
+```
+
+---
+
+## Strings Are Immutable
+
+Once a string is created, it **cannot be changed**. Any "modification" creates a **new string** — the original stays untouched.
+
+```java
+String original = "Hello";
+String modified = original + " World";
+
+// original is still "Hello"
+// modified is a new string "Hello World"
+```
+
+This is an important Java concept — every string operation that seems to "change" a string is actually creating a new one in memory.
+
+---
+
+## Built-in Utility Methods
+
+| Method              | What It Does                                         | Example                                           |
+| ------------------- | ---------------------------------------------------- | ------------------------------------------------- |
+| `toUpperCase()`     | Converts all letters to uppercase                    | `"hello"` → `"HELLO"`                             |
+| `toLowerCase()`     | Converts all letters to lowercase                    | `"HELLO"` → `"hello"`                             |
+| `trim()`            | Removes leading and trailing spaces                  | `"  hi  "` → `"hi"`                               |
+| `replace(old, new)` | Replaces all occurrences of a character or substring | `"hello"` → `"he77o"` with `.replace("ll", "77")` |
+
+```java
+String text = "  Hello, Java!  ";
+
+System.out.println(text.toUpperCase());      // "  HELLO, JAVA!  "
+System.out.println(text.toLowerCase());      // "  hello, java!  "
+System.out.println(text.trim());             // "Hello, Java!"
+System.out.println(text.replace("Java", "World"));  // "  Hello, World!  "
+```
+
+---
+
+## Key Takeaways
+
+1. Strings are **sequences of characters** — created with literals (`"text"`) or `new String()`
+2. **Indexing starts at 0** — `charAt(0)` gives the first character
+3. Use `+` or `concat()` for concatenation
+4. **Always use `.equals()`** to compare strings, never `==`
+5. `substring(start, end)` — end index is **exclusive** (not included)
+6. `split()` breaks strings apart, `String.join()` puts them together
+7. **Strings are immutable** — every modification creates a new string
+8. Utility methods: `toUpperCase()`, `toLowerCase()`, `trim()`, `replace()`
