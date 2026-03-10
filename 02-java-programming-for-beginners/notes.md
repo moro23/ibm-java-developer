@@ -971,3 +971,372 @@ System.out.println(text.replace("Java", "World"));  // "  Hello, World!  "
 6. `split()` breaks strings apart, `String.join()` puts them together
 7. **Strings are immutable** — every modification creates a new string
 8. Utility methods: `toUpperCase()`, `toLowerCase()`, `trim()`, `replace()`
+
+# Using Packages and Imports
+
+## What is a Package?
+
+A package is a **namespace that organizes related classes and interfaces** into a folder-like structure. Think of it like labeled cabinets in a record office — related files are grouped together.
+
+### Why Packages Matter
+
+| Purpose                    | How It Helps                                                                                          |
+| -------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Organization**           | Groups related classes into folders, easier to locate and manage                                      |
+| **Prevent name conflicts** | Classes with the same name can exist in different packages (e.g., `com.app.User` and `com.auth.User`) |
+| **Access control**         | Some classes can be public, others restricted to package-level visibility                             |
+
+---
+
+## Creating a Package
+
+Add the `package` keyword at the **very top** of your Java file (must be the first statement).
+
+```java
+package shapes;
+
+public class Circle {
+    private double radius;
+
+    // Constructor — initializes radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Method — calculates area
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+```
+
+### Naming Convention
+
+Use **reverse domain name** to ensure uniqueness:
+
+```
+com.example.shapes
+com.taskmanager.entity
+com.taskmanager.service
+```
+
+This is why our Task Manager project uses `com.taskmanager` as the base package — it's the standard Java convention.
+
+---
+
+## Imports
+
+An `import` statement brings classes or packages into your current file so you don't have to type the full package name every time.
+
+### Import a single class
+
+```java
+import shapes.Circle;
+
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle(5.0);     // no need to write shapes.Circle
+        System.out.println(c.area());
+    }
+}
+```
+
+### Import all classes from a package (wildcard)
+
+```java
+import shapes.*;    // imports every class in the shapes package
+```
+
+### Without importing (fully qualified name)
+
+```java
+shapes.Circle c = new shapes.Circle(5.0);   // works but verbose
+```
+
+---
+
+## Important Built-in Java Packages
+
+### `java.lang` — Core classes (auto-imported, no import needed)
+
+| Class                     | Purpose                                                        |
+| ------------------------- | -------------------------------------------------------------- |
+| `String`                  | Text manipulation                                              |
+| `Math`                    | Mathematical functions (`Math.PI`, `Math.sqrt()`)              |
+| `System`                  | Input/output, environment interaction (`System.out.println()`) |
+| `Integer`, `Double`, etc. | Wrapper classes for primitive types                            |
+
+> You never write `import java.lang.*;` — Java imports it automatically.
+
+### `java.util` — Collections, data structures, algorithms
+
+| Class                | Purpose                                                |
+| -------------------- | ------------------------------------------------------ |
+| `ArrayList`          | Resizable array (dynamic list)                         |
+| `HashMap`            | Key-value pair data structure                          |
+| `Date`               | Managing dates and times (legacy — prefer `java.time`) |
+| `List`, `Map`, `Set` | Collection interfaces                                  |
+
+### `java.io` — Input/output and file handling
+
+| Class                          | Purpose                                  |
+| ------------------------------ | ---------------------------------------- |
+| `File`                         | Manage file paths and directories        |
+| `InputStream` / `OutputStream` | Read/write byte streams                  |
+| `BufferedReader`               | Efficiently read text from input streams |
+
+### `java.net` — Networking
+
+| Class    | Purpose                     |
+| -------- | --------------------------- |
+| `Socket` | Client-server communication |
+| `URL`    | Represents a web address    |
+
+### `java.sql` — Database connectivity
+
+| Class        | Purpose                          |
+| ------------ | -------------------------------- |
+| `Connection` | Establishes database connections |
+| `Statement`  | Executes SQL commands            |
+
+### `java.time` — Modern date/time API (Java 8+)
+
+| Class           | Purpose                                     |
+| --------------- | ------------------------------------------- |
+| `LocalDate`     | Date without time zone (e.g., `2024-03-10`) |
+| `LocalTime`     | Time without date (e.g., `14:30:00`)        |
+| `LocalDateTime` | Both date and time                          |
+
+---
+
+## Best Practices
+
+### Package naming
+
+- Use **reverse domain name** convention (`com.yourcompany.project`)
+- Group related classes together
+- Keep names short and descriptive
+
+### Import management
+
+- **Import only what you need** — avoid wildcard (`*`) imports in production code
+- **Organize imports logically** — most IDEs do this automatically
+- **Remove unused imports** — keeps code clean and professional
+- Most IDEs (IntelliJ, Eclipse) have a keyboard shortcut to auto-organize imports
+
+---
+
+## Connection to Our Task Manager Project
+
+Our project already uses this structure:
+
+```
+package com.taskmanager.entity;      → User.java, Task.java
+package com.taskmanager.service;      → business logic
+package com.taskmanager.controller;   → REST endpoints
+package com.taskmanager.repository;   → database access
+```
+
+And imports like:
+
+```java
+import jakarta.persistence.*;         → JPA annotations
+import java.time.LocalDateTime;       → timestamps
+import java.util.List;                → collections
+```
+
+---
+
+## Key Takeaways
+
+1. **Packages** organize classes into namespaces using the `package` keyword
+2. **Imports** let you use classes without typing full package names
+3. Use `import package.ClassName;` for a single class, `import package.*;` for all
+4. **`java.lang`** is auto-imported — you never need to import `String`, `Math`, `System`
+5. Key packages: `java.util` (collections), `java.io` (files), `java.sql` (databases), `java.time` (dates)
+6. **Best practice:** import only what you need, use reverse domain naming, remove unused imports
+
+# Implementing Functions and Methods
+
+## What's the Difference?
+
+|                                    | Function                                                | Method                                          |
+| ---------------------------------- | ------------------------------------------------------- | ----------------------------------------------- |
+| **Definition**                     | Standalone block of code that performs a task           | A function that belongs to a class              |
+| **Tied to a class?**               | No (independent)                                        | Yes (operates on objects of that class)         |
+| **Can access instance variables?** | No                                                      | Yes                                             |
+| **In practice**                    | Not commonly used in Java (everything lives in classes) | The standard way to write reusable code in Java |
+
+> **Key point:** In Java, since everything must be inside a class, virtually all "functions" are technically methods. The term "function" is used conceptually, but you'll almost always be writing methods.
+
+---
+
+## Anatomy of a Method
+
+```java
+returnType methodName(parameters) {
+    // code block (logic)
+    return value;   // optional — omit if void
+}
+```
+
+| Part                 | Purpose                                                                    | Example             |
+| -------------------- | -------------------------------------------------------------------------- | ------------------- |
+| **Return type**      | What type of value the method gives back (`int`, `double`, `String`, etc.) | `int`               |
+| **Method name**      | Describes what it does                                                     | `add`               |
+| **Parameters**       | Inputs the method accepts (optional)                                       | `(int a, int b)`    |
+| **Code block**       | The logic that runs                                                        | `{ return a + b; }` |
+| **Return statement** | Sends a value back to the caller (omit for `void`)                         | `return a + b;`     |
+
+---
+
+## Examples
+
+### Simple method — add two numbers
+
+```java
+public class Main {
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int sum = add(5, 3);
+        System.out.println(sum);   // 8
+    }
+}
+```
+
+### Method inside a class — using an object
+
+```java
+public class Calculator {
+
+    int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();    // create an instance
+        int result = calc.multiply(4, 5);      // call method on the object
+        System.out.println(result);            // 20
+    }
+}
+```
+
+---
+
+## Parameters vs Arguments
+
+These terms are often confused:
+
+- **Parameters** — the variables in the method definition (what it _expects_)
+- **Arguments** — the actual values passed when calling the method (what you _give it_)
+
+```java
+// "name" and "age" are PARAMETERS
+void greet(String name, int age) {
+    System.out.println("Hello " + name + ", you are " + age + " years old");
+}
+
+// "Alice" and 30 are ARGUMENTS
+greet("Alice", 30);
+// Output: Hello Alice, you are 30 years old
+```
+
+---
+
+## Return Values
+
+The result a method gives back after performing its task. Can be any data type.
+
+```java
+public class Rectangle {
+
+    double area(double length, double width) {
+        return length * width;
+    }
+
+    public static void main(String[] args) {
+        Rectangle rect = new Rectangle();
+        double area = rect.area(4.5, 3.0);
+        System.out.println("The area of the rectangle is " + area);
+        // Output: The area of the rectangle is 13.5
+    }
+}
+```
+
+---
+
+## `void` Methods
+
+Methods that perform an action but **return nothing**.
+
+```java
+void printMessage() {
+    System.out.println("Hello World");
+    // no return statement needed
+}
+```
+
+---
+
+## Method Overloading
+
+Define **multiple methods with the same name** but **different parameters**. Java picks the right one based on the arguments you pass.
+
+```java
+public class Display {
+
+    void show(int number) {
+        System.out.println("Number: " + number);
+    }
+
+    void show(String text) {
+        System.out.println("Text: " + text);
+    }
+
+    public static void main(String[] args) {
+        Display display = new Display();
+        display.show(10);            // calls show(int)  → "Number: 10"
+        display.show("Hello World"); // calls show(String) → "Text: Hello World"
+    }
+}
+```
+
+Methods are distinguished by their **parameter types and count**, not by return type.
+
+---
+
+## Scope of Identifiers
+
+An **identifier** is a name given to a variable, method, class, etc. **Scope** determines where it can be accessed.
+
+| Scope        | Where It's Accessible                               | Example                                 |
+| ------------ | --------------------------------------------------- | --------------------------------------- |
+| **Local**    | Only within the method or block where it's declared | Variable inside a method                |
+| **Instance** | Throughout the class, tied to an object             | Field declared in a class (no `static`) |
+| **Static**   | Throughout the class, belongs to the class itself   | Field declared with `static` keyword    |
+
+```java
+public class Example {
+    static int classLevel = 10;     // static scope — accessible anywhere in class
+    int instanceLevel = 20;         // instance scope — needs an object
+
+    void myMethod() {
+        int localVar = 30;          // local scope — only inside this method
+    }
+}
+```
+
+---
+
+## Key Takeaways
+
+1. A **function** is a standalone code block; a **method** is a function tied to a class (in Java, you'll mostly write methods)
+2. Methods have a **return type**, **name**, **parameters**, and a **code block**
+3. **`void`** means the method returns nothing
+4. **Parameters** = what the method expects; **arguments** = what you actually pass
+5. **Method overloading** = same name, different parameters — Java picks the right one automatically
+6. **Scope** controls where a variable can be accessed: local (method), instance (object), or static (class)
