@@ -28,8 +28,8 @@ This program covers Java programming fundamentals, object-oriented design, web d
 | #   | Course                                                                                                                                                | Key Topics                                                      | Status          |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | --------------- |
 | 01  | [Introduction to Software Engineering](https://www.coursera.org/learn/introduction-to-software-engineering)                                           | SDLC, Agile, Scrum, IDEs, software architecture                 | Not Started     |
-| 02  | [Java Programming for Beginners](https://www.coursera.org/learn/java-programming-for-beginners-course)                                                | Variables, data types, control flow, methods, arrays            | **In Progress** |
-| 03  | [Object Oriented Programming in Java](https://www.coursera.org/learn/object-oriented-programming-in-java-course)                                      | Classes, inheritance, polymorphism, interfaces, design patterns | Not Started     |
+| 02  | [Java Programming for Beginners](https://www.coursera.org/learn/java-programming-for-beginners-course)                                                | Variables, data types, control flow, methods, arrays            | **Completed**   |
+| 03  | [Object Oriented Programming in Java](https://www.coursera.org/learn/object-oriented-programming-in-java-course)                                      | Classes, inheritance, polymorphism, interfaces, design patterns | **In Progress** |
 | 04  | Java App Development Project: Fundamentals, OOP & File I/O                                                                                            | Applied Java fundamentals, OOP, file handling                   | Not Started     |
 | 05  | [Introduction to HTML, CSS, & JavaScript](https://www.coursera.org/learn/introduction-html-css-javascript)                                            | Web fundamentals, DOM, responsive design, front-end basics      | Not Started     |
 | 06  | [Getting Started with Git and GitHub](https://www.coursera.org/learn/getting-started-with-git-and-github)                                             | Version control, branches, PRs, merge, collaboration            | Not Started     |
@@ -44,10 +44,10 @@ This program covers Java programming fundamentals, object-oriented design, web d
 
 > **Note:** Some courses may be recent additions to the series. Links will be added as they become available on Coursera.
 
-**Progress:** `1 / 14 courses in progress`
+**Progress:** `1 / 14 completed · 1 / 14 in progress`
 
 ```
-[██░░░░░░░░░░░░░░░░░░] 7% Complete
+[███░░░░░░░░░░░░░░░░░] 14% Complete
 ```
 
 ---
@@ -66,7 +66,7 @@ ibm-java-developer/
 │   ├── notes.md
 │   └── labs/
 │
-├── 02-java-programming-for-beginners/      ← Currently here
+├── 02-java-programming-for-beginners/
 │   ├── src/
 │   │   ├── DataTypes.java
 │   │   └── ...
@@ -74,7 +74,7 @@ ibm-java-developer/
 │   ├── notes.md
 │   └── labs/
 │
-├── 03-oop-in-java/
+├── 03-oop-in-java/                          ← Currently here
 │   ├── src/
 │   ├── notes.md
 │   └── labs/
@@ -138,7 +138,9 @@ ibm-java-developer/
 cd 02-java-programming-for-beginners
 
 # Compile a Java file
-javac -d classes src/DataTypes.java
+javac -d classes src/DataTypes.java 
+
+javac -d classes -cp classes src/BookAccess.java 
 
 # Run the compiled class
 java -cp classes DataTypes
