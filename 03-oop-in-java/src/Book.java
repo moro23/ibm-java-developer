@@ -36,6 +36,16 @@ public class Book {
         return "Title - " + this.title + "\nAuthor -" + this.author + "\nPrice" + String.format("%.2f", this.price);
     }
 
+    public Book(){
+        this.title = null; 
+        this.author = null;
+    }
 
-    
+    public Book(String title, String author, float price){
+        this.title = title; 
+        this.author = author; 
+        this.price = price; 
+    }
+
+
 }
