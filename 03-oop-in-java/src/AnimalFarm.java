@@ -14,7 +14,7 @@ public class AnimalFarm {
                 for (int i=0; i<animals.length; i++){
                     System.out.println(animals[i]);
                 }
-            } else if (userInput.equals("2")){
+            }else if (userInput.equals("2")){
                 if (anmIdx==10){
                     System.out.print("10 animals added already, cannot add anymore animals");
                     continue; 
@@ -37,7 +37,9 @@ public class AnimalFarm {
                     String cowName = scanner.nextLine(); 
                     Animal anmTemp = new Cow(cowName); 
                     animals[anmIdx++] = anmTemp;
-                }else{
+                }
+
+                } else{
                     break;
                 }
             }
@@ -46,4 +48,4 @@ public class AnimalFarm {
 
     }
     
-}
+
