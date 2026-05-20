@@ -19,11 +19,11 @@ public class Animal {
     public static void main(String s[]){
         Animal animal1 = new Dog("Bruce");
         Animal animal2 = new Cat("Popolampo");
-        // Animal animal3 = new Cow("Molly");
+        Animal animal3 = new Cow("Molly");
 
         System.out.println("Animal1 sound " + animal1.sound());
         System.out.println("Animal2 sound " + animal2.sound()); 
-        // System.out.println("Animal3 sound " + animal3.sound());
+        System.out.println("Animal3 sound " + animal3.sound());
 
     }
     
@@ -49,5 +49,18 @@ class Cat extends Animal{
     public String sound(){
         return "Meow";
     }
-
 }
+
+// lets create another child class called cow, that inherits from the Animal Class 
+
+class Cow extends Animal{
+    public Cow(String name){
+        super(name);
+    }
+
+    public String sound(){
+        return "Mooh";
+    }
+}
+
+
